@@ -1,0 +1,3 @@
+#!/usr/bin/with-contenv sh
+
+/usr/local/bin/skygear-server /usr/src/app/config.ini

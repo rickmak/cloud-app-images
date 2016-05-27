@@ -1,0 +1,3 @@
+FROM skygear-app-base:canary
+
+RUN touch __init__.py
