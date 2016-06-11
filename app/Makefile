@@ -1,6 +1,6 @@
 IMAGE_REGISTRY ?= quay.io/
 PROJECT_NAME ?= skygeario
-SHORT_NAME ?= cloud-app-deps
+SHORT_NAME ?= cloud-app
 IMAGE_TAG ?= git-$(shell git rev-parse --short HEAD)$(shell git diff -s --exit-code || echo "-dirty")
 DOCKER_BUILD_OPTS ?=
 

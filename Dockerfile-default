@@ -1,3 +1,0 @@
-FROM cloud-app-base:canary
-
-RUN touch __init__.py
