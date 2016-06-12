@@ -3,3 +3,5 @@
 if [ -f requirements.txt ] && [ -s requirements.txt ]; then
     pip install --no-cache-dir -r requirements.txt
 fi
+
+py-skygear --collect-assets /usr/src/assets --force-assets

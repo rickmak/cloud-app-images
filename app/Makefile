@@ -25,6 +25,7 @@ docker-test:
 	sleep 10;
 	docker-compose up -d --force-recreate server
 	sleep 5; curl http://localhost:3000
+	docker-compose run --rm build
 
 docker-test-clean:
 	docker-compose down

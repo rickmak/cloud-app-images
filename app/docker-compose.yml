@@ -24,7 +24,7 @@ services:
 
   build:
     image: cloud-app:canary
-    command: /build
+    command: sh -c "/build && cat /usr/src/assets/static/hello/index.txt"
     entrypoint: ""
     volumes:
-    - ./tests/requirements.txt:/usr/src/app/requirements.txt
+    - ./test-app:/usr/src/app
