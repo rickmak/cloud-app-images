@@ -10,6 +10,12 @@ REGISTRY_IMAGE_NAME = ${IMAGE_REGISTRY}${PROJECT_NAME}/${SHORT_NAME}:${IMAGE_TAG
 docker-build:
 	docker build ${DOCKER_BUILD_OPTS} -t ${LOCAL_IMAGE_NAME} .
 
+docker-build-local:
+	docker build ${DOCKER_BUILD_OPTS} \
+		--build-arg SKYGEAR_SERVER_VERSION=${SKYGEAR_SERVER_VERSION} \
+		--build-arg CLOUDCODE_RUNTIME_VERSION=${CLOUDCODE_RUNTIME_VERSION} \
+		-t ${LOCAL_IMAGE_NAME} -f Dockerfile-local .
+
 docker-push:
 	docker tag ${LOCAL_IMAGE_NAME} ${REGISTRY_IMAGE_NAME}
 	docker push ${REGISTRY_IMAGE_NAME}

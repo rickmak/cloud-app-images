@@ -1,0 +1,21 @@
+FROM quay.io/skygeario/cloud-app-deps:latest
+MAINTAINER Skygear.io <hello@skygear.io>
+
+ARG SKYGEAR_SERVER_VERSION
+ARG CLOUDCODE_RUNTIME_VERSION
+
+ADD skygear-server-v${SKYGEAR_SERVER_VERSION}-zmq-linux-amd64 /usr/local/bin/skygear-server
+RUN chmod a+x /usr/local/bin/skygear-server
+
+ADD skygear-${CLOUDCODE_RUNTIME_VERSION}-py3-none-any.whl /tmp/
+
+RUN pip install /tmp/skygear-${CLOUDCODE_RUNTIME_VERSION}-py3-none-any.whl[zmq]
+
+ADD rootfs/ /
+RUN chmod +x /build
+
+WORKDIR /usr/src/app
+VOLUME /usr/src/app/data
+
+CMD ["py-skygear"]
+EXPOSE 3000
