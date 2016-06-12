@@ -14,4 +14,13 @@ docker-push:
 	docker tag ${LOCAL_IMAGE_NAME} ${REGISTRY_IMAGE_NAME}
 	docker push ${REGISTRY_IMAGE_NAME}
 
+docker-test:
+	docker-compose up -d --force-recreate db redis
+	sleep 10;
+	docker-compose up -d --force-recreate server
+	sleep 5; curl http://localhost:3000
+
+docker-test-clean:
+	docker-compose down
+
 .PHONY: docker-build docker-push

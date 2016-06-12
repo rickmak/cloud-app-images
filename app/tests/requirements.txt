@@ -1,0 +1,2 @@
+beautifulsoup4
+git+https://github.com/mobolic/facebook-sdk.git#egg=facebook-sdk
