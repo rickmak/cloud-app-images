@@ -11,7 +11,7 @@ services:
     image: cloud-app:canary
     ports:
     - "3000:3000"
-    command: py-skygear
+    command: /boot
     environment:
       API_KEY: changeme
       MASTER_KEY: changemenow

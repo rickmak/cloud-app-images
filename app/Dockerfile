@@ -31,5 +31,5 @@ RUN chmod +x /build
 WORKDIR /usr/src/app
 VOLUME /usr/src/app/data
 
-CMD ["py-skygear"]
+CMD ["/boot"]
 EXPOSE 3000
