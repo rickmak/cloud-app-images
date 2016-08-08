@@ -1,15 +1,5 @@
 #!/bin/sh -e
 
-: ${SKYGEAR_APIKEY:=${API_KEY}}
-: ${SKYGEAR_MASTERKEY:=${MASTER_KEY}}
-: ${SKYGEAR_APPNAME:=${APP_NAME}}
-: ${SKYGEAR_LOGLEVEL:=${LOG_LEVEL}}
-
-export SKYGEAR_APIKEY
-export SKYGEAR_MASTERKEY
-export SKYGEAR_APPNAME
-export SKYGEAR_LOGLEVEL
-
 if [ ! -e __init__.py ] && [ ! -e plugin.py ]; then
     touch __init__.py
 fi
